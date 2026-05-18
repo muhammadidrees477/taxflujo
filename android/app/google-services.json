@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "703178770385",
+    "project_id": "taxtflujo",
+    "storage_bucket": "taxtflujo.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:703178770385:android:51d463084c6d4bb44f02f0",
+        "android_client_info": {
+          "package_name": "com.example.taxflujo"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBYMOc_2mUDEZgHSg27lEy3_y6qz5uboVc"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
