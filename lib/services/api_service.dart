@@ -1,4 +1,4 @@
-// lib/services/api_service.dart
+
 import 'dart:convert';
 import 'package:http/http.dart' as http;
 import 'package:flutter_secure_storage/flutter_secure_storage.dart';
@@ -136,7 +136,7 @@ class ApiService {
     int? companyId,
     String? invoiceNumber,
     String? invoiceDate,
-    double? totalAmount,
+    double? totalAmount, int? excludeId,
   }) async {
     final params = <String, String>{'action': 'check_dup', 'check_type': checkType};
     if (companyId != null)     params['company_id']     = companyId.toString();

@@ -1,78 +1,8 @@
-// import 'dart:async';
-//
-// import 'package:firebase_core/firebase_core.dart';
-// import 'package:flutter/material.dart';
-// import 'package:taxflujo/Veiw/login_screen1.dart';
-//
-// void main() async{
-//   WidgetsFlutterBinding.ensureInitialized();
-//   await Firebase.initializeApp();
-//
-//   runApp(const MyApp());
-// }
-// class MyApp extends StatelessWidget {
-//   const MyApp({super.key});
-//
-//   @override
-//   Widget build(BuildContext context) {
-//     return MaterialApp(home: SplashScreen());
-//   }
-// }
-// class SplashScreen extends StatefulWidget {
-//   const SplashScreen({super.key});
-//
-//   @override
-//   State<SplashScreen> createState() => _SplashScreenState();
-// }
-//
-// class _SplashScreenState extends State<SplashScreen> {
-//   @override
-//   void initState() {
-//     super.initState();
-//     // Simulate loading for 3 seconds, then navigate
-//     Timer(const Duration(seconds: 3), () {
-//       Navigator.of(context).pushReplacement(
-//         MaterialPageRoute(builder: (_) =>  LogIn()),
-//       );
-//     });
-//   }
-//
-//   @override
-//   Widget build(BuildContext context) {
-//     return Scaffold(
-//       backgroundColor: Colors.white,
-//       body: Center(
-//         child: Column(
-//           mainAxisAlignment: MainAxisAlignment.center,
-//           children: [
-//             // Logo placeholder
-//             Icon(Icons.apartment, size: 100, color: Colors.blue),
-//             const SizedBox(height: 20),
-//             const Text(
-//               'ContractorPro',
-//               style: TextStyle(
-//                 fontSize: 28,
-//                 fontWeight: FontWeight.bold,
-//                 color: Colors.blue,
-//               ),
-//             ),
-//             const SizedBox(height: 10),
-//             const Text(
-//               'Loading...',
-//               style: TextStyle(fontSize: 16, color: Colors.grey),
-//             ),
-//             const SizedBox(height: 30),
-//             const CircularProgressIndicator(color: Colors.blue),
-//           ],
-//         ),
-//       ),
-//     );
-//   }
-// }
 // lib/main.dart
 import 'package:flutter/material.dart';
 import 'package:firebase_core/firebase_core.dart';
 import 'package:firebase_messaging/firebase_messaging.dart';
+import 'package:taxflujo/screens/bottom_navigation.dart';
 import 'services/api_service.dart';
 import 'screens/login_screen.dart';
 import 'screens/invoice_list_screen.dart';
@@ -135,7 +65,7 @@ class _AuthGateState extends State<AuthGate> {
     if (loggedIn) {
       Navigator.pushReplacement(
         context,
-        MaterialPageRoute(builder: (_) => const InvoiceListScreen()),
+        MaterialPageRoute(builder: (_) => bottom_navigations()),
       );
     } else {
       Navigator.pushReplacement(

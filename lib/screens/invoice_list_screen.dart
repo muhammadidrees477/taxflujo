@@ -17,7 +17,7 @@ class _InvoiceListScreenState extends State<InvoiceListScreen> {
   List<dynamic> _companies  = [];
   bool   _isLoading         = true;
   String? _error;
-  int    _selectedTab       = 0;
+  // int    _selectedTab       = 0;
 
   // Filters (mirrors your index.php filters)
   String? _statusFilter;
@@ -164,11 +164,11 @@ class _InvoiceListScreenState extends State<InvoiceListScreen> {
           const Text('Status', style: TextStyle(fontWeight: FontWeight.w600, fontSize: 13)),
           const SizedBox(height: 6),
           Wrap(spacing: 8, children: List.generate(_statusOptions.length, (i) =>
-              ChoiceChip(
-                label: Text(_statusLabels[i]),
-                selected: tmpStatus == _statusOptions[i],
-                onSelected: (_) => setModal(() => tmpStatus = _statusOptions[i]),
-              ),
+            ChoiceChip(
+              label: Text(_statusLabels[i]),
+              selected: tmpStatus == _statusOptions[i],
+              onSelected: (_) => setModal(() => tmpStatus = _statusOptions[i]),
+            ),
           )),
           const SizedBox(height: 14),
 
@@ -268,7 +268,7 @@ class _InvoiceListScreenState extends State<InvoiceListScreen> {
                 Positioned(
                   top: 8, right: 8,
                   child: Container(width: 8, height: 8,
-                      decoration: const BoxDecoration(color: Colors.red, shape: BoxShape.circle)),
+                    decoration: const BoxDecoration(color: Colors.red, shape: BoxShape.circle)),
                 ),
             ],
           ),
@@ -305,7 +305,7 @@ class _InvoiceListScreenState extends State<InvoiceListScreen> {
               prefixIcon: const Icon(Icons.search, size: 20),
               suffixIcon: _search.isNotEmpty
                   ? IconButton(icon: const Icon(Icons.close, size: 18),
-                  onPressed: () { _searchCtrl.clear(); setState(() => _search = ''); _loadInvoices(); })
+                      onPressed: () { _searchCtrl.clear(); setState(() => _search = ''); _loadInvoices(); })
                   : null,
               isDense: true,
               contentPadding: const EdgeInsets.symmetric(vertical: 10),
@@ -352,21 +352,21 @@ class _InvoiceListScreenState extends State<InvoiceListScreen> {
         icon: const Icon(Icons.add),
         label: const Text('New Invoice'),
       ),
-      bottomNavigationBar: NavigationBar(
-        selectedIndex: _selectedTab,
-        backgroundColor: Colors.white,
-        onDestinationSelected: (i) {
-          if (i == 1) {
-            Navigator.push(context, MaterialPageRoute(builder: (_) => const ProfileScreen()));
-          } else {
-            setState(() => _selectedTab = i);
-          }
-        },
-        destinations: const [
-          NavigationDestination(icon: Icon(Icons.receipt_long_outlined), selectedIcon: Icon(Icons.receipt_long), label: 'Invoices'),
-          NavigationDestination(icon: Icon(Icons.person_outline), selectedIcon: Icon(Icons.person), label: 'Profile'),
-        ],
-      ),
+      // bottomNavigationBar: NavigationBar(
+      //   selectedIndex: _selectedTab,
+      //   backgroundColor: Colors.white,
+      //   onDestinationSelected: (i) {
+      //     if (i == 1) {
+      //       Navigator.push(context, MaterialPageRoute(builder: (_) => const ProfileScreen()));
+      //     } else {
+      //       setState(() => _selectedTab = i);
+      //     }
+      //   },
+      //   destinations: const [
+      //     NavigationDestination(icon: Icon(Icons.receipt_long_outlined), selectedIcon: Icon(Icons.receipt_long), label: 'Invoices'),
+      //     NavigationDestination(icon: Icon(Icons.person_outline), selectedIcon: Icon(Icons.person), label: 'Profile'),
+      //   ],
+      // ),
     );
   }
 

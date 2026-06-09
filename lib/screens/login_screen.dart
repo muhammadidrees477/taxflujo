@@ -2,7 +2,9 @@
 import 'package:flutter/material.dart';
 import 'package:firebase_messaging/firebase_messaging.dart';
 import '../services/api_service.dart';
-import 'invoice_list_screen.dart';
+import 'bottom_navigation.dart';
+import 'dashboard.dart';
+// import 'invoice_list_screen.dart';
 
 class LoginScreen extends StatefulWidget {
   const LoginScreen({super.key});
@@ -40,7 +42,7 @@ class _LoginScreenState extends State<LoginScreen> {
       if (!mounted) return;
       Navigator.pushReplacement(
         context,
-        MaterialPageRoute(builder: (_) => const InvoiceListScreen()),
+        MaterialPageRoute(builder: (_) => bottom_navigations()),
       );
     } on ApiException catch (e) {
       setState(() => _error = e.message);
